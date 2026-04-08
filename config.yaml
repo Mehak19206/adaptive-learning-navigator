@@ -7,7 +7,6 @@ environment:
   state:
     - knowledge
     - time_spent
-    - energy
   actions:
     - easy
     - medium
@@ -26,4 +25,4 @@ metrics:
 
 deployment:
   platform: Hugging Face Spaces
-  framework: Gradio
+  framework: streamlit
