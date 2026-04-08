@@ -129,7 +129,10 @@ Efficiency: 680%
 
 ## 👨‍💻 Author
 
-**Ayush Pandey**
+** Team:
+ Ayush Pandey
+ Yash Kumar
+ Mehak Rai **
 
 ---
 
