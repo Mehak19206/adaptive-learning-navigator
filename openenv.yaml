@@ -1,15 +1,28 @@
-name: Adaptive Learning Navigator
-description: RL-based learning optimization environment
-
+name: adaptive-learning-navigator
+version: "1.0"
+description: RL-based adaptive learning environment that optimizes study plans for real-world exams
+tags:
+  - openenv
 actions:
   - easy
   - medium
   - hard
   - revise
   - skip
-
 observation:
-  - knowledge
-  - time_spent
-
+  knowledge: float
+  time_spent: float
 reward: efficiency-based
+tasks:
+  - id: task_easy
+    description: Reach 50% knowledge with minimal time spent
+    difficulty: easy
+    target_knowledge: 50
+  - id: task_medium
+    description: Reach 75% knowledge efficiently
+    difficulty: medium
+    target_knowledge: 75
+  - id: task_hard
+    description: Reach 100% knowledge within step limit
+    difficulty: hard
+    target_knowledge: 100
