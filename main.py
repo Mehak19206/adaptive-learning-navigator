@@ -6,13 +6,23 @@ env = LearningEnv()
 
 @app.post("/reset")
 def reset():
-    return env.reset().dict()
+    obs = env.reset()
+    return {
+        "knowledge": obs.knowledge,
+        "time_spent": obs.time_spent
+    }
 
 @app.post("/step")
 def step(action: dict):
-    state, reward, done, _ = env.step(action)
+    action_value = action.get("action")  # extract actual action
+
+    state, reward, done, _ = env.step(action_value)
+
     return {
-        "observation": state.dict(),
+        "observation": {
+            "knowledge": state.knowledge,
+            "time_spent": state.time_spent
+        },
         "reward": reward.value,
         "done": done,
         "info": {}
@@ -20,4 +30,8 @@ def step(action: dict):
 
 @app.get("/state")
 def state():
-    return env.state().dict()
+    s = env.state()
+    return {
+        "knowledge": s.knowledge,
+        "time_spent": s.time_spent
+    }
