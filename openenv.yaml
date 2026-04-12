@@ -1,0 +1,15 @@
+name: Adaptive Learning Navigator
+description: RL-based learning optimization environment
+
+actions:
+  - easy
+  - medium
+  - hard
+  - revise
+  - skip
+
+observation:
+  - knowledge
+  - time_spent
+
+reward: efficiency-based
